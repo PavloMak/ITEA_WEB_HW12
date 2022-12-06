@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="customer" class="com.vtlions.spring12.Customer">
+		<constructor-arg name="name" value="Deny" />
+		<constructor-arg name="cart" ref="cart1" />
+	</bean>
+
+
+	<bean id="cart1" class="com.vtlions.spring12.Cart">
+		<constructor-arg name="maxSize" value="40" />
+		<constructor-arg name="products">
+			<map>
+				<entry key-ref="product1" value="2" />
+				<entry key-ref="product2" value="10" />
+				<entry key-ref="product3" value="1" />
+			</map>
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="product1" class="com.vtlions.spring12.Product">
+		<constructor-arg name="id" value="1" />
+		<constructor-arg name="name" value="Soup" />
+		<constructor-arg name="price" value="40" />
+	</bean>
+	<bean id="product2" class="com.vtlions.spring12.Product">
+		<constructor-arg name="id" value="2" />
+		<constructor-arg name="name" value="Egg" />
+		<constructor-arg name="price" value="15" />
+	</bean>
+	<bean id="product3" class="com.vtlions.spring12.Product">
+		<constructor-arg name="id" value="3" />
+		<constructor-arg name="name" value="Juice" />
+		<constructor-arg name="price" value="47" />
+	</bean>
+
+</beans>
